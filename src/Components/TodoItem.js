@@ -5,7 +5,7 @@ import './TodoItem.css'
 
 
 class TodoItem extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
