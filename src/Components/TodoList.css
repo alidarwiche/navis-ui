@@ -1,3 +1,18 @@
-.section {
-  background-color: #e8e8e8;
+.Todo {
+  display: flex;
+  background-color: #e9e9e9;
+  min-height: 150px;
+  padding: 20px;
+}
+
+.Todo-column {
+  width: 50%;
+  margin: 10px;
+}
+
+input {
+  padding: 12px 10px;
+  border: none;
+  display: inline-block;
+  size: 30px;
 }
