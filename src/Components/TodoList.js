@@ -55,7 +55,7 @@ class TodoList extends Component {
           </div>
           <p>To add an item to your To-Do list type it in the field above and press enter or click the plus icon.</p>
         </div>
-        <div className="Todo-column" style={{display: 'inline-flex', flexDirection: 'column', flexWrap: 'wrap', marginTop:'20px', width: '55%'}}>
+        <div className="Todo-column" style={{display: 'inline-flex', flexDirection: 'column', flexWrap: 'wrap', marginTop:'40px', width: '55%'}}>
           {this.state.todoList.map((todoItem, index) => (
             <TodoItem key={index} todoValue={todoItem} />
           ))}
