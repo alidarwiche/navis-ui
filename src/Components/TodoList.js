@@ -9,12 +9,15 @@ class TodoList extends Component {
 
     this.state = {
       todoInput: '',
+      todoList: [],
     };
   }
 
   addTodoItem() {
-    console.log(this.state.todoInput);
-
+    this.state.todoList.push(this.state.todoInput);
+    this.setState({
+      todoInput: '',
+    });
   }
 
   // private method
@@ -52,11 +55,13 @@ class TodoList extends Component {
           </div>
           <p>To add an item to your To-Do list type it in the field above and press enter or click the plus icon.</p>
         </div>
-        <div className="Todo-column">
-          <TodoItem />
+        <div className="Todo-column" style={{display: 'inline-flex', flexDirection: 'column'}}>
+          {this.state.todoList.map((todoItem, index) => (
+            <TodoItem key={index} todoValue={todoItem} />
+          ))}
         </div>
       </div>
-    )
+    );
   }
 }
 
