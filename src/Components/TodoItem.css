@@ -1,3 +1,5 @@
 .TodoItem {
   display: flex;
+  margin: 10px 5px;
+  width: 50%;
 }
