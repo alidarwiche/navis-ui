@@ -9,6 +9,7 @@ class TodoItem extends Component {
     super(props);
     this.state = {
       onHover: false,
+      isChecked: false,
     };
   }
 
@@ -20,11 +21,21 @@ class TodoItem extends Component {
     this.setState({onHover: true});
   }
 
+  completeCallback() {
+
+    this.setState({
+      isChecked: !this.state.isChecked,
+    }, () => {
+      console.log(this.state.isChecked);
+    });
+  }
+
   render() {
     return (
       <div className="TodoItem" onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.mouseOver.bind(this)}>
           <div className="TodoItemInner">
-            <Check size={20} style={{height:'100%',color:'#e9e9e9', padding:'0px 10px 0px 10px'}} />
+            <Check size={20} style={{height:'100%',color:'#e9e9e9', padding:'0px 10px 0px 10px'}}
+                    onClick={this.completeCallback.bind(this)} />
             <p style={{margin:'10px'}}> {this.props.todoValue} </p>
           </div>
           { this.state.onHover
