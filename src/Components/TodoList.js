@@ -33,6 +33,12 @@ class TodoList extends Component {
     });
   }
 
+  deleteItem(index) {
+    this.state.todoList.splice(index,1);
+    this.setState({
+      todoList: this.state.todoList,
+    });
+  }
 
   render() {
     return (
@@ -57,7 +63,7 @@ class TodoList extends Component {
         </div>
         <div className="Todo-column" style={{display: 'inline-flex', flexDirection: 'column', flexWrap: 'wrap', marginTop:'40px', width: '55%'}}>
           {this.state.todoList.map((todoItem, index) => (
-            <TodoItem key={index} todoValue={todoItem} />
+            <TodoItem key={index} todoValue={todoItem} deleteCallback={this.deleteItem.bind(this, index)} />
           ))}
         </div>
       </div>

@@ -8,16 +8,16 @@ class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flipped: false,
+      onHover: false,
     };
   }
 
   mouseOut() {
-    this.setState({flipped: false});
+    this.setState({onHover: false});
   }
 
   mouseOver() {
-    this.setState({flipped: true});
+    this.setState({onHover: true});
   }
 
   render() {
@@ -27,7 +27,11 @@ class TodoItem extends Component {
             <Check size={20} style={{height:'100%',color:'#e9e9e9', padding:'0px 10px 0px 10px'}} />
             <p style={{margin:'10px'}}> {this.props.todoValue} </p>
           </div>
-          {this.state.flipped ? <Times size={20} style={{height:'100%', padding:'10px'}} /> : null }
+          { this.state.onHover
+            ? <Times size={20} style={{height:'100%', padding:'10px'}}
+                    onClick={this.props.deleteCallback} />
+            : <Times size={20} style={{height:'100%', color:'#e9e9e9', padding:'10px'}} />
+          }
       </div>
     )
   }
