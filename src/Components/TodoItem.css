@@ -4,10 +4,38 @@
   width: 50%;
 }
 
-.TodoItemInner {
+.incompleteTodo {
   background-color: white;
   width: 100%;
   display: inline-flex;
+}
+
+.incompleteCheck {
+  height:100%;
+  color:#e9e9e9;
+  padding:0px 10px 0px 10px;
+}
+
+.incompleteText {
+  /* Default color */
+  margin:10px;
+}
+
+.completedTodo {
+  background-color: #f1f1f1;
+  width: 100%;
+  display: inline-flex;
+}
+
+.completedCheck {
+  height:100%;
+  color: #a1a1a1;
+  padding:0px 10px 0px 10px;
+}
+
+.completedText {
+  color: #d2d2d2;
+  margin:10px;
 }
 
 /* .TodoItemInner:hover {

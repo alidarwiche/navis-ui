@@ -3,6 +3,8 @@ import Plus from 'react-icons/lib/fa/plus'
 import TodoItem from './TodoItem.js'
 import './TodoList.css'
 
+let keyCounter = 0;
+
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +16,11 @@ class TodoList extends Component {
   }
 
   addTodoItem() {
-    this.state.todoList.push(this.state.todoInput);
+    const newItem = {
+      id: ++keyCounter,
+      value: this.state.todoInput
+    }
+    this.state.todoList.push(newItem);
     this.setState({
       todoInput: '',
     });
@@ -63,7 +69,7 @@ class TodoList extends Component {
         </div>
         <div className="Todo-column" style={{display: 'inline-flex', flexDirection: 'column', flexWrap: 'wrap', marginTop:'40px', width: '55%'}}>
           {this.state.todoList.map((todoItem, index) => (
-            <TodoItem key={index} todoValue={todoItem} deleteCallback={this.deleteItem.bind(this, index)} />
+            <TodoItem key={todoItem.id} todoValue={todoItem.value} deleteCallback={this.deleteItem.bind(this, index)} />
           ))}
         </div>
       </div>

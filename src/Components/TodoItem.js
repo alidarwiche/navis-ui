@@ -22,22 +22,36 @@ class TodoItem extends Component {
   }
 
   completeCallback() {
-
     this.setState({
       isChecked: !this.state.isChecked,
-    }, () => {
-      console.log(this.state.isChecked);
     });
   }
 
   render() {
+    const IncompleteTodo = (
+      <div className="incompleteTodo">
+        <Check size={20} className="incompleteCheck" onClick={this.completeCallback.bind(this)} />
+        <p className="incompleteText"> {this.props.todoValue} </p>
+      </div>
+    );
+    const CompletedTodo = (
+      <div className="completedTodo">
+        <Check size={20} className="completedCheck" onClick={this.completeCallback.bind(this)} />
+        <p className="completedText"> {this.props.todoValue} </p>
+      </div>
+    );
+
     return (
       <div className="TodoItem" onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.mouseOver.bind(this)}>
-          <div className="TodoItemInner">
-            <Check size={20} style={{height:'100%',color:'#e9e9e9', padding:'0px 10px 0px 10px'}}
-                    onClick={this.completeCallback.bind(this)} />
-            <p style={{margin:'10px'}}> {this.props.todoValue} </p>
-          </div>
+          {this.state.isChecked
+            ? <div className="completedTodo">
+                <Check size={20} className="completedCheck" onClick={this.completeCallback.bind(this)} />
+                <p className="completedText"> {this.props.todoValue} </p>
+              </div>
+            : <div className="incompleteTodo">
+                <Check size={20} className="incompleteCheck" onClick={this.completeCallback.bind(this)} />
+                <p className="incompleteText"> {this.props.todoValue} </p>
+              </div> }
           { this.state.onHover
             ? <Times size={20} style={{height:'100%', padding:'10px'}}
                     onClick={this.props.deleteCallback} />
