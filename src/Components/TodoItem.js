@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import Check from 'react-icons/lib/fa/check'
-import Times from 'react-icons/lib/ti/times'
-import './TodoItem.css'
+import React, {Component} from 'react';
+import Check from 'react-icons/lib/fa/check';
+import Times from 'react-icons/lib/ti/times';
+import './TodoItem.css';
 
 
 class TodoItem extends Component {
@@ -43,15 +43,7 @@ class TodoItem extends Component {
 
     return (
       <div className="TodoItem" onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.mouseOver.bind(this)}>
-          {this.state.isChecked
-            ? <div className="completedTodo">
-                <Check size={20} className="completedCheck" onClick={this.completeCallback.bind(this)} />
-                <p className="completedText"> {this.props.todoValue} </p>
-              </div>
-            : <div className="incompleteTodo">
-                <Check size={20} className="incompleteCheck" onClick={this.completeCallback.bind(this)} />
-                <p className="incompleteText"> {this.props.todoValue} </p>
-              </div> }
+          {this.state.isChecked ? CompletedTodo : IncompleteTodo }
           { this.state.onHover
             ? <Times size={20} style={{height:'100%', padding:'10px'}}
                     onClick={this.props.deleteCallback} />

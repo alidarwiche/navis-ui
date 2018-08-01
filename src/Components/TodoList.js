@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import Plus from 'react-icons/lib/fa/plus'
-import TodoItem from './TodoItem.js'
-import './TodoList.css'
+import React, {Component} from 'react';
+import Plus from 'react-icons/lib/fa/plus';
+import TodoItem from './TodoItem.js';
+import './TodoList.css';
 
 let keyCounter = 0;
 
