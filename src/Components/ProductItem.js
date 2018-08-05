@@ -8,7 +8,7 @@ class ProductItem extends Component {
     return(
       <div className='ProductItem'>
         <img className='ProductImage' src={this.props.imagePath} alt=''/>
-        <p>{this.props.imageDescription}</p>
+        <p style={{fontSize: '14px'}}>{this.props.imageDescription}</p>
       </div>
     );
   }
