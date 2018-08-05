@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoList from  './Components/TodoList.js';
+import Products from  './Components/Products.js';
 import Header from './Components/Header.js';
 import logo from './logo.svg';
 import './App.css';
@@ -14,6 +15,7 @@ class App extends Component {
         </header>
         {/* <Header className="Header"/> */}
         <TodoList />
+        <Products />
       </div>
     );
   }

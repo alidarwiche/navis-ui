@@ -1,0 +1,21 @@
+.ProductItem {
+  /* display: inline-flex; */
+  max-width: 180px;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.ProductImage {
+  border-radius: 50%;
+  /* auto = browser calculates dimension */
+  width: 100%;
+  height: 180px;
+  border: 6px solid white;
+  /* max-height: 200px; */
+  /* block = starts on a new line, and takes up the whole width */
+  /* display: block;  */
+}
+
+.ProductImage:hover {
+  border: 6px solid #00bce6;
+}
