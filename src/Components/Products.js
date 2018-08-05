@@ -13,18 +13,23 @@ class TodoList extends Component {
       todoInput: '',
       productList: [
         {
+          id: keyCounter++,
           image: intermodalContainer,
           description: 'A large standardized shipping container, designed and built for intermodal freight transport.'
+
         },
         {
+          id: keyCounter++,
           image: intermodalContainer,
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         },
         {
+          id: keyCounter++,
           image: intermodalContainer,
           description: 'Fusce rutrum mauris aliquam, elementum erat nec, venenatis nibh.'
         },
         {
+          id: keyCounter++,
           image: intermodalContainer,
           description: 'Proin id ligula nec libero condimentum convallis.'
         },
@@ -38,7 +43,7 @@ class TodoList extends Component {
         <h1>Products</h1>
         <div style={{display: 'flex'}}>
           {this.state.productList.map((productItem, index) => (
-            <ProductItem imagePath={productItem.image} imageDescription={productItem.description}/>
+            <ProductItem key={productItem.id} imagePath={productItem.image} imageDescription={productItem.description}/>
           ))}
         </div>
 

@@ -17,7 +17,7 @@ class TodoList extends Component {
 
   addTodoItem() {
     const newItem = {
-      id: ++keyCounter,
+      id: keyCounter++,
       value: this.state.todoInput
     }
     this.state.todoList.push(newItem);
