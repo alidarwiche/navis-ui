@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TodoList from  './Components/TodoList.js';
 import Products from  './Components/Products.js';
 import SectionDivider from './Components/SectionDivider.js';
+import Weather from './Components/Weather.js';
 // import Header from './Components/Header.js';
 import logo from './logo.svg';
 import './App.css';
@@ -18,6 +19,11 @@ class App extends Component {
         <TodoList />
         <SectionDivider color='#1ba78c'/>
         <Products />
+        <SectionDivider color='#7bbf3f'/>
+        <Weather />
+        <SectionDivider color='#545454'/>
+        <footer className="App-header" style={{backgroundColor: 'black'}}>
+        </footer>
       </div>
     );
   }
