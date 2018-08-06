@@ -1,6 +1,7 @@
 
 
 export function doRequest(requestType, url) {
+  console.log(url);
   const apiData = {
     method: requestType,
     headers: {
@@ -11,20 +12,21 @@ export function doRequest(requestType, url) {
   fetch(url, apiData)
     .then(
       (result) => {
-        console.log(result);
+        console.log('result');
         return {
           error: undefined,
           result: result,
         };
       },
       (error) => {
-        console.log(error);
+        console.log('error');
         return {
           error: error,
           result: undefined,
         };
       }
     )
+  console.log('should not make it here--------------');
 }
 
 export const dummyData = {
