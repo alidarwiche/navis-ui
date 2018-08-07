@@ -30,44 +30,45 @@ export function doRequest(requestType, url) {
 }
 
 export const dummyData = {
-  "coord": {
-      "lon": -97.74,
-      "lat": 30.27
-  },
-  "weather": [
-      {
-          "id": 800,
-          "main": "Clear",
-          "description": "clear sky",
-          "icon": "01n"
-      }
-  ],
-  "base": "stations",
-  "main": {
-      "temp": 302.81,
-      "pressure": 1019,
-      "humidity": 58,
-      "temp_min": 301.15,
-      "temp_max": 304.15
-  },
-  "visibility": 16093,
-  "wind": {
-      "speed": 2.1,
-      "deg": 180
-  },
-  "clouds": {
-      "all": 1
-  },
-  "dt": 1533521700,
-  "sys": {
-      "type": 1,
-      "id": 2557,
-      "message": 0.0038,
-      "country": "US",
-      "sunrise": 1533556361,
-      "sunset": 1533604832
-  },
-  "id": 4671654,
-  "name": "Austin",
-  "cod": 200
+    "coord": {
+        "lon": -97.74,
+        "lat": 30.27
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 85.6,
+        "pressure": 1017,
+        "humidity": 58,
+        "temp_min": 84.2,
+        "temp_max": 87.8
+    },
+    "visibility": 16093,
+    "wind": {
+        "speed": 10.29,
+        "deg": 150,
+        "gust": 7.2
+    },
+    "clouds": {
+        "all": 1
+    },
+    "dt": 1533606960,
+    "sys": {
+        "type": 1,
+        "id": 2558,
+        "message": 0.0035,
+        "country": "US",
+        "sunrise": 1533642797,
+        "sunset": 1533691182
+    },
+    "id": 4671654,
+    "name": "Austin",
+    "cod": 200
 };

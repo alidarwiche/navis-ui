@@ -15,10 +15,14 @@ class WeatherItem extends Component {
     return(
       <div>
         <p>{this.props.cityName}</p>
-        <p>{this.props.temperature}</p>
-        <p>{this.props.description}</p>
-        <img src={'http://openweathermap.org/img/w/'+this.props.icon+'.png'} alt=''/>
-        <p>{this.props.windSpeed}</p>
+        <p style={{fontSize: '40px', margin: '0px'}}>{this.props.temperature}˚F</p>
+        <div style={{display: 'flex'}}>
+          <img src={'http://openweathermap.org/img/w/'+this.props.icon+'.png'} alt=''/>
+          <p>{this.props.description}</p>
+        </div>
+        <div style={{display: 'flex'}}>
+          <p><span>Wind Speed:</span> {this.props.windSpeed} mph</p>
+        </div>
       </div>
     );
   }
