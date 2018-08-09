@@ -1,33 +1,67 @@
 
 
 export function doRequest(requestType, url) {
-  console.log(url);
-  const apiData = {
+  const config = {
     method: requestType,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "892d32a9ba54f35f38773b0889e86ecd",
+      // "Authorization": "892d32a9ba54f35f38773b0889e86ecd",
     },
   }
-  fetch(url, apiData)
-    .then(
-      (result) => {
-        console.log('result');
-        return {
-          error: undefined,
-          result: result,
-        };
-      },
-      (error) => {
-        console.log('error');
-        return {
-          error: error,
-          result: undefined,
-        };
-      }
-    )
-  console.log('should not make it here--------------');
+
+  return new Promise ((resolve, reject) => {
+    fetch(url)
+      .then((response) => {
+        resolve(response.json());
+      })
+      .catch((error) => {
+        console.log('Error:', JSON.stringify(error));
+        reject(error);
+      })
+
+
+    // fetch(url, config)
+    //   .then((response) => {
+    //     console.log(response);
+    //     if (isObjectEmpty(response)) {
+    //       reject('test');
+    //       // throw new Error('Something went wrong ...');
+    //     } else {
+    //       resolve(response);
+    //     }
+    //   })
+    //   .catch(error => reject('test'));
+  // })
+
+    // fetch(url, config)
+    //   .then(
+    //     (response) => {
+    //       console.log('response:', response);
+    //       return {
+    //         error: undefined,
+    //         result: response,
+    //       };
+    //     },
+    //     (error) => {
+    //       console.log('error');
+    //       return {
+    //         error: error,
+    //         result: undefined,
+    //       };
+    //     }
+    //   )
+    // console.log('should not make it here--------------');
+    })
 }
+
+function isObjectEmpty(obj) {
+  for(var prop in obj) {
+      if(obj.hasOwnProperty(prop))
+          return false;
+  }
+  return true;
+}
+
 
 export const dummyData = {
     "coord": {
