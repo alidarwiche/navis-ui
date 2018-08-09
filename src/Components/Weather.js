@@ -11,10 +11,10 @@ class Weather extends Component {
 
     this.state = {
       citiesList: [
-        'Austin,us',
-        'New York,us',
-        'Oakland,us',
-        'Phoenix,us',
+        'Austin',
+        'New York',
+        'Oakland',
+        'Phoenix',
       ],
     }
   }
@@ -23,21 +23,12 @@ class Weather extends Component {
   // WeatherItems take a city name and make an api call to retreive that cities data
   render() {
     return (
-      <div style={{backgroundColor: '#e9e9e9'}}>
+      <div style={{backgroundColor: '#e9e9e9', padding: '20px'}}>
         <h2 style={{margin: '0px', padding:'10px'}}>My weather data feed</h2>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           { this.state.citiesList.map((city, index) => (
-            <WeatherItem
-              key={keyCounter++}
-              cityName={city}
-              // cityName={dummyData.name}
-              // temperature={dummyData.main.temp}
-              // description={dummyData.weather[0].description}
-              // icon={dummyData.weather[0].icon}
-              // windSpeed={dummyData.wind.speed}
-            />
-          ))
-          }
+            <WeatherItem key={keyCounter++} cityName={city} />
+          ))}
         </div>
       </div>
     );

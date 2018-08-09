@@ -18,39 +18,6 @@ export function doRequest(requestType, url) {
         console.log('Error:', JSON.stringify(error));
         reject(error);
       })
-
-
-    // fetch(url, config)
-    //   .then((response) => {
-    //     console.log(response);
-    //     if (isObjectEmpty(response)) {
-    //       reject('test');
-    //       // throw new Error('Something went wrong ...');
-    //     } else {
-    //       resolve(response);
-    //     }
-    //   })
-    //   .catch(error => reject('test'));
-  // })
-
-    // fetch(url, config)
-    //   .then(
-    //     (response) => {
-    //       console.log('response:', response);
-    //       return {
-    //         error: undefined,
-    //         result: response,
-    //       };
-    //     },
-    //     (error) => {
-    //       console.log('error');
-    //       return {
-    //         error: error,
-    //         result: undefined,
-    //       };
-    //     }
-    //   )
-    // console.log('should not make it here--------------');
     })
 }
 
@@ -60,6 +27,18 @@ export function isObjectEmpty(obj) {
           return false;
   }
   return true;
+}
+
+export function JSClock(time) {
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var temp = '' + ((hour > 12) ? hour - 12 : hour);
+  if (hour == 0)
+    temp = '12';
+  temp += ((minute < 10) ? ':0' : ':') + minute;
+  temp += (hour >= 12) ? ' P.M.' : ' A.M.';
+
+  return temp;
 }
 
 
