@@ -44,7 +44,7 @@ class TodoList extends Component {
     return (
       <div className="Products">
         <h1>Products</h1>
-        <div style={{display: 'flex'}}>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
           {this.state.productList.map((productItem, index) => (
             <ProductItem key={productItem.id} imagePath={productItem.image} imageDescription={productItem.description}/>
           ))}

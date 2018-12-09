@@ -1,0 +1,9 @@
+.HeaderItem {
+  flex-grow: 1;
+  color: white;
+  margin-top: auto;
+}
+
+.HeaderItem:hover {
+  background-color: #33cc99;
+}
